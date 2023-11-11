@@ -13,6 +13,5 @@ export default class UserValidationEmail {
     } catch (error) {
       return response.status(500).json({ mensagem: 'Erro interno do servidor', obs: error.message })
     }
-
   }
 }
