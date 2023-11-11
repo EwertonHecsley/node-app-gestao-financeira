@@ -1,0 +1,11 @@
+node_modules
+build
+coverage
+.vscode
+.DS_STORE
+.env
+tmp
+tests
+.env.test
+test.ts
+
