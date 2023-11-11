@@ -22,7 +22,7 @@ export default class LoginUserValidator {
     'required': 'O campo {{field}} é obrigatório.',
     'email': 'Deve ser um {{field}} válido.',
     'minLength': 'A senha deve ter no mínimo 4 caracteres.',
-    'maxLength': 'A sena deve ter no máximo 8 caracteres.',
+    'maxLength': 'A senha deve ter no máximo 8 caracteres.',
     'alphaNum': 'Senha só é permitido letras e números'
   }
 }

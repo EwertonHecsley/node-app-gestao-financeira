@@ -8,4 +8,6 @@ Route.group(() => {
     store: ['validateBody', 'validateEmail'],
     index: ['auth']
   }).apiOnly()
+
+  Route.put('/usuario', 'UsersController.updateUser').middleware(['auth', 'validateBody', 'validateEmail'])
 }).prefix('/api')
