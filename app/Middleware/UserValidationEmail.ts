@@ -7,7 +7,7 @@ export default class UserValidationEmail {
     try {
       const usuarioEmail = await User.findBy('email', email)
       if (usuarioEmail) {
-        return response.status(400).json({ mensagem: 'Email já cadastrado no sistema.' })
+        return response.status(400).json({ mensagem: 'Já existe usuário cadastrado com o e-mail informado.' })
       }
       await next()
     } catch (error) {
