@@ -21,5 +21,6 @@ Server.middleware.register([
 |
 */
 Server.middleware.registerNamed({
-  validateBody: () => import('App/Middleware/UserValidationBody')
+  validateBody: () => import('App/Middleware/UserValidationBody'),
+  validateEmail: () => import('App/Middleware/UserValidationEmail')
 })
