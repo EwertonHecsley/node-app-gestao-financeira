@@ -5,6 +5,7 @@ Route.group(() => {
   Route.post('/login', 'LoginController.login').middleware(['validateBodyLogin', 'findEmailBd'])
 
   Route.resource('/usuario', 'UsersController').middleware({
-    store: ['validateBody', 'validateEmail']
+    store: ['validateBody', 'validateEmail'],
+    index: ['auth']
   }).apiOnly()
 }).prefix('/api')

@@ -50,8 +50,8 @@ export default class AuthMiddleware {
      * Unable to authenticate using any guard
      */
     throw new AuthenticationException(
-      'Unauthorized access',
-      'E_UNAUTHORIZED_ACCESS',
+      'Para acessar este recurso um token de autenticação válido deve ser enviado.',
+      'Usuário não autorizado',
       guardLastAttempted,
       this.redirectTo,
     )
@@ -60,7 +60,7 @@ export default class AuthMiddleware {
   /**
    * Handle request
    */
-  public async handle (
+  public async handle(
     { auth }: HttpContextContract,
     next: () => Promise<void>,
     customGuards: (keyof GuardsList)[]
