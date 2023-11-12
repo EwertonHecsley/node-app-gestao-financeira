@@ -23,7 +23,16 @@ export default class CategoriasController {
     }
   }
 
-  public async show({ }: HttpContextContract) { }
+  public async show({ auth, response, params }: HttpContextContract) {
+    const id_parametro = params.id
+    try {
+      const { id } = (await auth.authenticate()).$attributes
+      const categorias = (await Categoria.query().where('usuario_id', id)).find((cat) => cat.id == id_parametro)
+      return response.status(200).json(categorias)
+    } catch (error) {
+      return response.status(500).json({ mensagem: 'Erro interno do servidor', obs: error.message })
+    }
+  }
 
   public async update({ }: HttpContextContract) { }
 

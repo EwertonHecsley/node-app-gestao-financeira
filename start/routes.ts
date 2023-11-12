@@ -13,6 +13,7 @@ Route.group(() => {
 
   Route.resource('/categoria', 'CategoriasController').middleware({
     index: ['auth'],
-    store: ['auth', 'validateDescriptionCategory']
+    store: ['auth', 'validateDescriptionCategory'],
+    show: ['auth', 'verificarIdCategoria']
   })
 }).prefix('/api')
