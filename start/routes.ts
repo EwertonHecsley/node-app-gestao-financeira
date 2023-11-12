@@ -12,6 +12,7 @@ Route.group(() => {
   Route.put('/usuario', 'UsersController.updateUser').middleware(['auth', 'validateBody', 'validateEmail'])
 
   Route.resource('/categoria', 'CategoriasController').middleware({
+    index: ['auth'],
     store: ['auth', 'validateDescriptionCategory']
   })
 }).prefix('/api')

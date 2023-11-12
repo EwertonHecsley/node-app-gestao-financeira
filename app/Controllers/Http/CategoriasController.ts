@@ -2,7 +2,15 @@ import type { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
 import Categoria from 'App/Models/Categoria'
 
 export default class CategoriasController {
-  public async index({ }: HttpContextContract) { }
+  public async index({ auth, response }: HttpContextContract) {
+    try {
+      const { id } = (await auth.authenticate()).$attributes
+      const categoria = await Categoria.query().where('usuario_id', id)
+      return response.status(200).json(categoria)
+    } catch (error) {
+      return response.status(500).json({ mensagem: 'Erro interno do servidor', obs: error.message })
+    }
+  }
 
   public async store({ auth, request, response }: HttpContextContract) {
     const { descricao } = request.body()
