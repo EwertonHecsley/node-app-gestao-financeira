@@ -34,7 +34,17 @@ export default class CategoriasController {
     }
   }
 
-  public async update({ }: HttpContextContract) { }
+  public async update({ request, response, params }: HttpContextContract) {
+    const id_categoria = Number(params.id)
+    const { descricao } = request.body()
+    try {
+      await Categoria.query().update({ descricao }).where({ id: id_categoria })
+      return response.status(200).json({ mensagem: 'Categoria editada com sucesso.' })
+    } catch (error) {
+      return response.status(500).json({ mensagem: 'Erro interno do servidor', obs: error.message })
+    }
+
+  }
 
   public async destroy({ }: HttpContextContract) { }
 }

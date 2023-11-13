@@ -14,6 +14,7 @@ Route.group(() => {
   Route.resource('/categoria', 'CategoriasController').middleware({
     index: ['auth'],
     store: ['auth', 'validateDescriptionCategory'],
-    show: ['auth', 'verificarIdCategoria']
+    show: ['auth', 'verificarIdCategoria'],
+    update: ['auth', 'validateDescriptionCategory', 'verificarIdCategoria']
   })
 }).prefix('/api')
