@@ -11,5 +11,7 @@ Server.middleware.registerNamed({
   findEmailBd: () => import('App/Middleware/FindEmail'),
   auth: () => import('App/Middleware/Auth'),
   validateDescriptionCategory: () => import('App/Middleware/VerificaDescricao'),
-  verificarIdCategoria: () => import('App/Middleware/ListarCategoriaId')
+  verificarIdCategoria: () => import('App/Middleware/ListarCategoriaId'),
+  verificaBodyTransacoes: () => import('App/Middleware/TransitionBodyVerify'),
+  intermediarioTransacoes: () => import('App/Middleware/MiddTransition')
 })

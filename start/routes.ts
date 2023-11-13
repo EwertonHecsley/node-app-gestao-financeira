@@ -19,7 +19,7 @@ Route.group(() => {
     //Finalizar endpoint deletar e verifcar se existe transacoes antes de deletar
   })
 
-  Route.resource('/trasacoes', 'TransacoesController').middleware({
-    store: ['auth']
+  Route.resource('/transacao', 'TransacoesController').middleware({
+    store: ['auth', 'verificaBodyTransacoes', 'intermediarioTransacoes']
   })
 }).prefix('/api')
