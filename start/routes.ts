@@ -16,5 +16,10 @@ Route.group(() => {
     store: ['auth', 'validateDescriptionCategory'],
     show: ['auth', 'verificarIdCategoria'],
     update: ['auth', 'validateDescriptionCategory', 'verificarIdCategoria']
+    //Finalizar endpoint deletar e verifcar se existe transacoes antes de deletar
+  })
+
+  Route.resource('/trasacoes', 'TransacoesController').middleware({
+    store: ['auth']
   })
 }).prefix('/api')
