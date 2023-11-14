@@ -12,25 +12,25 @@ Bem-vindo ao Sistema de Gerenciamento Financeiro! Esta é uma API desenvolvida p
 
 ## Tecnologias Utilizadas
 
-  <div>
-    <strong>Banco de Dados PostgreSQL:</strong><br>
+
+   **Banco de Dados PostgreSQL:**
     Armazene e gerencie seus dados financeiros de forma segura e eficiente utilizando o poderoso banco de dados relacional PostgreSQL.
-  </div>
+
   
-  <div>
-    <strong>Framework AdonisJS:</strong><br>
+  **Framework AdonisJS:**
     AdonisJS é um framework web para Node.js que segue a arquitetura MVC (Model-View-Controller). Ele é projetado para simplificar o desenvolvimento de aplicativos web robustos e escaláveis, fornecendo uma estrutura organizada e uma série de recursos integrados. 
-  </div>
   
-  <div>
-    <strong>Node.js:</strong><br>
+  
+  **Node.js:**
     Desenvolvido com Node.js, o projeto oferece uma base sólida para a construção de uma API robusta e de alto desempenho.
-  </div>
- 
-  <div>
-    <strong>Bcrypt Criptografia:</strong><br>
+
+  **TypeScript:**
+  TypeScript é uma linguagem de programação open source que é uma superset do JavaScript. Isso significa que qualquer código JavaScript é válido em TypeScript, mas o TypeScript adiciona recursos extras, incluindo tipagem estática opcional e suporte a recursos modernos de ECMAScript.
+  
+  
+  **Bcrypt Criptografia:**
     Proteja as senhas dos usuários utilizando a biblioteca bcrypt, que realiza o hash seguro das senhas antes de armazená-las no banco de dados.
-  </div>
+    
 
 ## Como Usar
 
