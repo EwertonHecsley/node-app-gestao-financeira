@@ -29,8 +29,6 @@ export default class UsersController {
     }
   }
 
-  public async show({ }: HttpContextContract) { }
-
   public async updateUser({ auth, request, response }: HttpContextContract) {
     const { nome, email, senha } = request.body()
     try {
@@ -47,6 +45,4 @@ export default class UsersController {
       return response.status(500).json({ mensagem: 'Erro interno do servidor', obs: error.message })
     }
   }
-
-  public async destroy({ }: HttpContextContract) { }
 }

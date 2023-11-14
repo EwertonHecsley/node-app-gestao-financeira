@@ -37,7 +37,18 @@ export default class TransacoesController {
     }
   }
 
-  public async update({ }: HttpContextContract) { }
-
-  public async destroy({ }: HttpContextContract) { }
+  public async destroy({ auth, params, response }: HttpContextContract) {
+    const id_parametro = Number(params.id)
+    try {
+      const { id } = (await auth.authenticate()).$attributes
+      const transacao = await Transacoe.query().where({ usuario_id: id }).where({ id: id_parametro }).first()
+      if (!transacao) {
+        return response.status(404).json({ mensagem: 'Transacao não encontrada.' })
+      }
+      await transacao.delete()
+      return response.status(204)
+    } catch (error) {
+      return response.status(500).json({ mensagem: 'Erro interno do servidor.', obs: error.message })
+    }
+  }
 }
