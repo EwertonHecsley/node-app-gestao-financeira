@@ -2,11 +2,25 @@ import type { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
 import Transacoe from 'App/Models/Transacoe'
 
 export default class TransacoesController {
-  public async index({ auth, response }: HttpContextContract) {
+  public async index({ auth, request, response }: HttpContextContract) {
+    const filtro = request.input('filtro')
+
     try {
       const { id } = (await auth.authenticate()).$attributes
-      const transacoes = await Transacoe.query().where({ usuario_id: id })
-      return response.status(200).json(transacoes)
+      const transacoes = await Transacoe.query()
+        .preload('categoria')
+        .where({ usuario_id: id })
+
+      if (!filtro) {
+        return response.status(200).json(transacoes)
+      }
+
+      const transacoesFiltradas = transacoes.filter((elemento) => {
+        const categoriaMinusculo = elemento.categoria.descricao.toLowerCase()
+        return filtro.some(filtroItem => categoriaMinusculo.includes(filtroItem.toLowerCase()))
+      })
+
+      return response.status(200).json(transacoesFiltradas)
     } catch (error) {
       return response.status(500).json({ mensagem: 'Erro interno do servidor.', obs: error.message })
     }
