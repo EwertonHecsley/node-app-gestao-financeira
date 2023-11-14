@@ -12,49 +12,24 @@ Bem-vindo ao Sistema de Gerenciamento Financeiro! Esta é uma API desenvolvida p
 
 ## Tecnologias Utilizadas
 
-<div style="display: flex; flex-direction: column; align-items: center; text-align: left; margin-bottom: 20px;">
-  <div style="margin-bottom: 10px;">
-    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original-wordmark.svg" alt="PostgreSQL" width="50">
-  </div>
-
-  
   <div>
     <strong>Banco de Dados PostgreSQL:</strong><br>
     Armazene e gerencie seus dados financeiros de forma segura e eficiente utilizando o poderoso banco de dados relacional PostgreSQL.
   </div>
 </div>
-
-<div style="display: flex; flex-direction: column; align-items: center; text-align: left; margin-bottom: 20px;">
-  <div style="margin-bottom: 10px;">
-    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css" alt="AdonisJs" width="50">
-  </div>
-
   
   <div>
     <strong>Framework AdonisJS:</strong><br>
     AdonisJS é um framework web para Node.js que segue a arquitetura MVC (Model-View-Controller). Ele é projetado para simplificar o desenvolvimento de aplicativos web robustos e escaláveis, fornecendo uma estrutura organizada e uma série de recursos integrados. 
   </div>
 </div>
-
-
-<div style="display: flex; flex-direction: column; align-items: center; text-align: left; margin-bottom: 20px;">
-  <div style="margin-bottom: 10px;">
-    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original-wordmark.svg" alt="Node.js" width="50">
-  </div>
-
   
   <div>
     <strong>Node.js:</strong><br>
     Desenvolvido com Node.js, o projeto oferece uma base sólida para a construção de uma API robusta e de alto desempenho.
   </div>
 </div>
-
-<div style="display: flex; flex-direction: column; align-items: center; text-align: left; margin-bottom: 20px;">
-  <div style="margin-bottom: 10px;">
-    <img src="https://itigic.com/wp-content/uploads/2021/04/20210418_607c1beb23e9f.jpg" alt="Bcrypt" width="50">
-  </div>
-
-  
+ 
   <div>
     <strong>Bcrypt Criptografia:</strong><br>
     Proteja as senhas dos usuários utilizando a biblioteca bcrypt, que realiza o hash seguro das senhas antes de armazená-las no banco de dados.
