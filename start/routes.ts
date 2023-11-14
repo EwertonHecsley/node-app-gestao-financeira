@@ -20,6 +20,8 @@ Route.group(() => {
   }).apiOnly()
 
   Route.resource('/transacao', 'TransacoesController').middleware({
-    store: ['auth', 'verificaBodyTransacoes', 'intermediarioTransacoes']
+    index: ['auth'],
+    store: ['auth', 'verificaBodyTransacoes', 'intermediarioTransacoes'],
+    show: ['auth']
   })
 }).prefix('/api')
