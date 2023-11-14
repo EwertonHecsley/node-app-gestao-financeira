@@ -46,5 +46,14 @@ export default class CategoriasController {
 
   }
 
-  public async destroy({ }: HttpContextContract) { }
+  public async destroy({ auth, params, response }: HttpContextContract) {
+    const id_categoria = Number(params.id)
+    try {
+      const { id } = (await auth.authenticate()).$attributes
+      await Categoria.query().where({ id: id_categoria }).where({ usuario_id: id }).del()
+      return response.status(204)
+    } catch (error) {
+      return response.status(500).json({ mensagem: 'Erro interno do servidor', obs: error.message })
+    }
+  }
 }

@@ -13,5 +13,6 @@ Server.middleware.registerNamed({
   validateDescriptionCategory: () => import('App/Middleware/VerificaDescricao'),
   verificarIdCategoria: () => import('App/Middleware/ListarCategoriaId'),
   verificaBodyTransacoes: () => import('App/Middleware/TransitionBodyVerify'),
-  intermediarioTransacoes: () => import('App/Middleware/MiddTransition')
+  intermediarioTransacoes: () => import('App/Middleware/MiddTransition'),
+  intermediarioDeletarCategorias: () => import('App/Middleware/MiddDeletarCategoria')
 })
