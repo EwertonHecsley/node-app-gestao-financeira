@@ -19,9 +19,12 @@ Route.group(() => {
     destroy: ['auth', 'intermediarioDeletarCategorias']
   }).apiOnly()
 
+  Route.get('/transacao/extrato', 'TransacaoExtratoesController.listarTransacao').middleware(['auth'])
+
   Route.resource('/transacao', 'TransacoesController').middleware({
     index: ['auth'],
     store: ['auth', 'verificaBodyTransacoes', 'intermediarioTransacoes'],
     show: ['auth']
   })
+
 }).prefix('/api')
